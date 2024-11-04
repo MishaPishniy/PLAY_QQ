@@ -7,7 +7,7 @@ test.describe('Demo Tests', () => {
 
     const usernameLocator = page.locator('#user-name');
     await usernameLocator.fill('standard_user');
-
+  
     const passwordLocator = page.locator('#password');
     await passwordLocator.fill('secret_sauce');
 
@@ -21,6 +21,7 @@ test.describe('Demo Tests', () => {
 
     const usernameLocator = page.locator('#user-name');
     await usernameLocator.fill('standard_user');
+
 
     const passwordLocator = page.locator('#password');
     await passwordLocator.fill('secret_sauce');
