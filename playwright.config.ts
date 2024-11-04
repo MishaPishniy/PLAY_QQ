@@ -1,6 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-require('dotenv').config();
-
+require('dotenv').config({ override: true });  // Було require('dotenv').config(); Щоб переконатися, що змінні зчитуються безпосередньо з .env файлу, то переробив і тепер перепише process.env змінні навіть, якщо вони вже визначені
 
 /**
  * Read environment variables from file.
