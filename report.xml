@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="2.7451769999999995">
+<testsuite name="envs.spec.ts" timestamp="2024-11-07T18:21:14.944Z" hostname="development" tests="1" failures="0" skipped="0" time="1.23" errors="0">
+<testcase name="Тест логіну з використанням конфігурації середовища" classname="envs.spec.ts" time="1.23">
+</testcase>
+</testsuite>
+</testsuites>
