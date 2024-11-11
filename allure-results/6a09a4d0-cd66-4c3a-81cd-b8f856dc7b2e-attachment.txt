@@ -1,0 +1,6 @@
+Console message type: error
+Console message text: Failed to load resource: the server responded with a status of 401 (Unauthorized)
+Console message type: error
+Console message text: Failed to load resource: the server responded with a status of 401 (Unauthorized)
+Console message type: log
+Console message text: Content is cached for offline use.
