@@ -4,8 +4,9 @@ import fs from 'fs';
 const logStream = fs.createWriteStream('browser-console-logs.txt', { flags: 'a' });
 
 test('Capture and analyze console logs for errors', async ({ page }) => {
-    
+
   const consoleErrors = [];
+
   page.on('console', async msg => {
     const location = msg.location();
     const logMessage = `Console ${msg.type()} at ${location.url}:${location.lineNumber}:${location.columnNumber}\n${msg.text()}\n`;
