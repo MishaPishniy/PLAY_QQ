@@ -21,8 +21,6 @@ test.describe('Use fixture' , () =>{
         await expect(loggedInPage.locator('.inventory_item')).toHaveCount(6)
     });
 
-
-
     test('Kilkist tovariv na', async ({loggedInPage}) =>{
  
         const addButton = loggedInPage.locator('.inventory_item button').first()
