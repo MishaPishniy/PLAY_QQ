@@ -14,3 +14,82 @@ Failed to load resource: the server responded with a status of 401 (Unauthorized
 ---
 Checking if the URL has changed to the inventory page
 Test completed successfully
+Navigating to https://www.saucedemo.com
+Response from: https://www.saucedemo.com/
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/css/main.f6c64be5.chunk.css
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/js/main.018d2d1e.chunk.js
+Status code: 200 - 
+---
+Response from: https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/js/2.84a5cbf3.chunk.js
+Status code: 200 - 
+---
+Response from: https://fonts.gstatic.com/s/dmmono/v14/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2
+Status code: 200 - 
+---
+Response from: https://fonts.gstatic.com/s/dmmono/v14/aFTU7PB1QTsUX8KYthqQBA.woff2
+Status code: 200 - 
+---
+Response from: https://fonts.gstatic.com/s/dmsans/v15/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2
+Status code: 200 - 
+---
+Filling in the username and password fields
+Clicking the login button
+Waiting for logs to capture...
+Response from: https://www.saucedemo.com/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/media/close@3x.a30a8a1d.svg
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/media/menu3x.52cc17a3.svg
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/media/bike-light-1200x1500.37c843b0.jpg
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/media/filter3x.2943df5b.svg
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/media/red-onesie-1200x1500.2ec615b2.jpg
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/media/bolt-shirt-1200x1500.c2599ac5.jpg
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/media/red-tatt-1200x1500.30dadef4.jpg
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/media/sauce-pullover-1200x1500.51d7ffaf.jpg
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/media/arrow3x.4b825b78.svg
+Status code: 200 - 
+---
+Response from: https://www.saucedemo.com/static/media/cart3x.3669d74a.svg
+Status code: 200 - 
+---
+Console log at https://www.saucedemo.com/static/js/2.84a5cbf3.chunk.js:1:123015
+Content is cached for offline use.
+Console argument: Content is cached for offline use.
+---
+Response from: https://events.backtrace.io/api/summed-events/submit?universe=UNIVERSE&token=TOKEN
+Status code: 401 - Unauthorized
+---
+Console error at https://events.backtrace.io/api/summed-events/submit?universe=UNIVERSE&token=TOKEN:0:0
+Failed to load resource: the server responded with a status of 401 (Unauthorized)
+---
+Response from: https://events.backtrace.io/api/unique-events/submit?universe=UNIVERSE&token=TOKEN
+Status code: 401 - Unauthorized
+---
+Console error at https://events.backtrace.io/api/unique-events/submit?universe=UNIVERSE&token=TOKEN:0:0
+Failed to load resource: the server responded with a status of 401 (Unauthorized)
+---
+Checking if the URL has changed to the inventory page
+Test completed successfully

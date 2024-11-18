@@ -2,7 +2,9 @@
   "name": "play_qq",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+  "test:debug:firefox": "npx playwright test tests/login.spec.ts --debug --firefox"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,6 +18,7 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "uuid": "^11.0.3"
   }
 }
