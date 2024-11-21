@@ -1,6 +1,6 @@
 import test, { expect } from "@playwright/test";
 import {users} from "../../test-data/credentials"
-import createAuthCookie from "../../utils/api/cookies/createAuthCookies";
+//import createAuthCookie from "../../utils/api/cookies/createAuthCookies";
 import generateHeaderWithCookies from "../../utils/api/cookies/generateHeaderWithCookies";
 import getUserCarsList from "../../utils/garage/getUserCarsList";
 
