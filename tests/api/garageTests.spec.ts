@@ -4,8 +4,6 @@ import {users} from "../../test-data/credentials"
 import generateHeaderWithCookies from "../../utils/api/cookies/generateHeaderWithCookies";
 import getUserCarsList from "../../utils/garage/getUserCarsList";
 
-
-
 test('Cars models public request', async({request}) =>{
 
     const response = await request.get('/api/cars/models');
