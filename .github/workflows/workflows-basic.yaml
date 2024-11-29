@@ -1,12 +1,12 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
 jobs:
   playwright:
-    name: 'Playwright Tests'
+    name: Playwright Tests
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.48.2-jammy
@@ -19,4 +19,14 @@ jobs:
         run: npm ci
       - name: Run your tests
         run: npx playwright test
-   
+      - name: Save report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          path: html/report
+          name: Main report
+      - name: Get report
+        if: always()
+        uses: actions/download-artifact@v3
+        with:
+          name: Main report
