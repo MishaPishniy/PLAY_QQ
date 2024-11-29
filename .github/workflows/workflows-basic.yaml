@@ -17,16 +17,11 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-      - name: Run your tests
-        run: npx playwright test
+      - name: Run Playwright tests
+        run: npx playwright test --reporter=html
       - name: Save report
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          path: html/report
-          name: Main report
-      - name: Get report
-        if: always()
-        uses: actions/download-artifact@v3
-        with:
-          name: Main report
+          name: Playwright HTML Report
+          path: playwright-report
