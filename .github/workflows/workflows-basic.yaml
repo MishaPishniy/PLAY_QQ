@@ -1,16 +1,17 @@
 name: Playwright Tests
 on:
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch:
     inputs:
       test_suite:
-        description: 'Test file to run'
+        description: 'Test file to run (leave empty to run all tests)'
         required: false
-        default: ' '
+        default: ''
+
 jobs:
   playwright:
-    name: 'Playwright Tests'
+    name: 'Run Playwright Tests'
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.44.0-jammy
@@ -21,14 +22,20 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-      - name: Run your tests
-        run: npx playwright test ${{ inputs.test_suite }}
+      - name: Run Playwright tests
+        run: |
+          if [ -z "${{ inputs.test_suite }}" ]; then
+            npx playwright test
+          else
+            npx playwright test ${{ inputs.test_suite }}
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
-          path: playwright-report/
+          path: playwright-report
           retention-days: 30
+
   deploy:
     if: ${{ always() }}
     runs-on: ubuntu-latest
@@ -38,7 +45,7 @@ jobs:
       id-token: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: Download Playwright report artifact
         uses: actions/download-artifact@v4
         with:
