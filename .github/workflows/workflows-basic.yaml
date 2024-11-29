@@ -1,22 +1,19 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [main, master]
   pull_request:
-    branches: [main, master]
+    branches: [ main, master ]
   workflow_dispatch:
     inputs:
-      test_swit:
-        description: 'Test file to run (optional)'
+      test_suite:
+        description: 'Test file to run'
         required: false
-        default: ''
-
+        default: ' '
 jobs:
   playwright:
-    name: Playwright Tests
+    name: 'Playwright Tests'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.48.2-jammy
+      image: mcr.microsoft.com/playwright:v1.44.0-jammy
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -24,16 +21,35 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-      - name: Run Playwright tests
-        run: |
-          if [ -z "${{ inputs.test_swit }}" ]; then
-            npx playwright test
-          else
-            npx playwright test ${{ inputs.test_swit }}
-          fi
-      - name: Save report
+      - name: Run your tests
+        run: npx playwright test ${{ inputs.test_suite }}
+      - uses: actions/upload-artifact@v4
         if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: Playwright HTML Report
-          path: playwright-report
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+  deploy:
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    needs: playwright
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Download Playwright report artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report
+          path: out
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact to Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: out
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
