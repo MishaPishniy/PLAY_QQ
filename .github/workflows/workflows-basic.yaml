@@ -3,11 +3,12 @@ on:
   pull_request:
     branches: [main, master]
   workflow_dispatch:
-   inputs:
+    inputs:
       test_swit:
-        description: 'Test file to run'
+        description: 'Test file to run (optional)'
         required: false
-        default: ' '
+        default: ''
+
 jobs:
   playwright:
     name: Playwright Tests
@@ -22,7 +23,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run Playwright tests
-        run: npx playwright test ${{ inputs.test_swit }}
+        run: |
+          if [ -z "${{ inputs.test_swit }}" ]; then
+            npx playwright test
+          else
+            npx playwright test ${{ inputs.test_swit }}
+          fi
       - name: Save report
         if: always()
         uses: actions/upload-artifact@v4
